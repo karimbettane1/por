@@ -40,7 +40,7 @@ export const profileData: ProfileData = {
     "Développeur Full Stack Junior passionné par la création d'applications web modernes, performantes et intuitives. Je conçois des solutions complètes, du frontend au backend, en mettant l'accent sur la qualité du code et l'expérience utilisateur.",
   bioLong:
     "Stagiaire à l'OFPPT en Développement Digital, option Développeur Web Full Stack (2024-2026) à l'ISTA Sefrou. Originaire de Boulemane, je cultive une passion sincère pour les technologies du web moderne. Mon objectif est de transformer des besoins fonctionnels en applications élégantes, robustes et scalables, en alliant rigueur algorithmique, architecture logicielle propre et sens affûté du design.",
-  avatarUrl: "/images/image.png",
+  avatarUrl: import.meta.env.BASE_URL + "images/image.png",
   stats: [
     { value: 6, suffix: "+", label: "Projets Réalisés" },
     { value: 8, suffix: "+", label: "Technologies Clés" },
