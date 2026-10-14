@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -11,7 +12,7 @@ import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { CvModal } from './components/CvModal';
 
-export default function App() {
+function PortfolioContent() {
   const [isCvOpen, setIsCvOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -48,7 +49,7 @@ export default function App() {
   }, [isCvOpen]);
 
   return (
-    <div className="relative min-h-screen bg-[#0b1329] text-[#e6f0ff] overflow-x-hidden selection:bg-blue-600 selection:text-white">
+    <div className="relative min-h-screen bg-[#f8fafc] text-slate-900 dark:bg-[#0b1329] dark:text-[#e6f0ff] overflow-x-hidden selection:bg-blue-600 selection:text-white transition-colors duration-300">
       {/* Top Navbar */}
       <Navbar onOpenCv={() => setIsCvOpen(true)} activeSection={activeSection} />
 
@@ -72,5 +73,13 @@ export default function App() {
       {/* Curriculum Vitae Modal */}
       <CvModal isOpen={isCvOpen} onClose={() => setIsCvOpen(false)} />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <PortfolioContent />
+    </ThemeProvider>
   );
 }

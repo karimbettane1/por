@@ -23,29 +23,40 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-[#93c5fd] text-[12.5px] font-semibold mb-3">
-            <User className="w-3.5 h-3.5 text-blue-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-400/25 text-blue-700 dark:text-[#93c5fd] text-[12.5px] font-semibold mb-3">
+            <User className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>À Propos de Moi</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white font-poppins tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 dark:text-white font-poppins tracking-tight transition-colors">
             Passionné par le Web & <br />
+            <span
+              style={{
+                background: 'linear-gradient(92deg, #2563eb, #7c3aed)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+              className="dark:hidden"
+            >
+              l'Ingénierie Logicielle
+            </span>
             <span
               style={{
                 background: 'linear-gradient(92deg, #60a5fa, #a855f7)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
+              className="hidden dark:inline"
             >
               l'Ingénierie Logicielle
             </span>
           </h2>
-          <p className="text-[#9bb7de] text-[15.5px] mt-3">
+          <p className="text-slate-600 dark:text-[#9bb7de] text-[15.5px] mt-3 transition-colors">
             Découvrez mon profil, mes valeurs de travail et les compétences linguistiques et humaines que j'apporte aux projets.
           </p>
         </div>
@@ -62,20 +73,20 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
             className="lg:col-span-7 space-y-6"
           >
             {/* Story Card */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md shadow-xl relative overflow-hidden">
+            <div className="p-7 sm:p-8 rounded-3xl bg-white dark:bg-white/[0.03] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-md shadow-md dark:shadow-xl relative overflow-hidden transition-colors">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/15 border border-blue-200 dark:border-blue-500/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-poppins font-bold text-lg text-white">Mon Parcours & Vision</h3>
-                  <p className="text-xs text-[#8caecc]">Développeur Full Stack Junior • Boulemane, Maroc</p>
+                  <h3 className="font-poppins font-bold text-lg text-slate-900 dark:text-white">Mon Parcours & Vision</h3>
+                  <p className="text-xs text-slate-500 dark:text-[#8caecc]">Développeur Full Stack Junior • Boulemane, Maroc</p>
                 </div>
               </div>
 
-              <div className="space-y-4 text-[15.2px] leading-relaxed text-[#b6cae6]">
+              <div className="space-y-4 text-[15.2px] leading-relaxed text-slate-700 dark:text-[#b6cae6] transition-colors">
                 <p>
-                  Je m'appelle <strong className="text-white font-semibold">Karim Bettane</strong>. Stagiaire à l'OFPPT en Développement Digital, avec une spécialisation en <strong className="text-white font-semibold">Développement Web Full Stack</strong> (2024-2026) à l'ISTA Sefrou, j'ai développé une solide base technique alliant front-end réactif et logiques back-end performantes.
+                  Je m'appelle <strong className="text-slate-900 dark:text-white font-semibold">Karim Bettane</strong>. Stagiaire à l'OFPPT en Développement Digital, avec une spécialisation en <strong className="text-slate-900 dark:text-white font-semibold">Développement Web Full Stack</strong> (2024-2026) à l'ISTA Sefrou, j'ai développé une solide base technique alliant front-end réactif et logiques back-end performantes.
                 </p>
                 <p>
                   Mon approche repose sur trois principes clés : la clarté du code, le respect des standards industriels (architectures MVC, REST APIs, Git Flow) et une attention pointue accordée à l'expérience utilisateur et à la responsivité mobile.
@@ -85,7 +96,7 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+              <div className="pt-6 mt-6 border-t border-slate-200 dark:border-white/[0.08] flex flex-wrap items-center justify-between gap-4 transition-colors">
                 <button
                   onClick={onOpenCv}
                   className="px-5 py-3 rounded-xl text-white text-[13.8px] font-semibold flex items-center gap-2 cursor-pointer shadow-md hover:scale-[1.02] transition-transform"
@@ -97,24 +108,24 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
                   <span>Consulter le CV Complet</span>
                 </button>
 
-                <div className="flex items-center gap-2 text-xs text-[#8caecc]">
-                  <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-[#8caecc]">
+                  <CheckCircle className="w-4 h-4 text-emerald-500" />
                   <span>Disponible pour stage et opportunités</span>
                 </div>
               </div>
             </div>
 
             {/* Qualities Grid */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md shadow-xl">
-              <h3 className="font-poppins font-bold text-base text-white mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-400" />
+            <div className="p-7 sm:p-8 rounded-3xl bg-white dark:bg-white/[0.03] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-md shadow-md dark:shadow-xl transition-colors">
+              <h3 className="font-poppins font-bold text-base text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400" />
                 Qualités Personnelles & Atouts
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {qualities.map((q, idx) => (
                   <span
                     key={idx}
-                    className="px-3.5 py-1.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[13px] text-[#cfe0f8] font-medium hover:border-blue-500/40 transition-colors"
+                    className="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.08] text-[13px] text-slate-800 dark:text-[#cfe0f8] font-medium hover:border-blue-500/40 transition-colors"
                   >
                     {q}
                   </span>
@@ -132,65 +143,65 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
             className="lg:col-span-5 space-y-6"
           >
             {/* Quick Profile Info Card */}
-            <div className="p-7 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md shadow-xl space-y-4">
-              <h3 className="font-poppins font-bold text-base text-white pb-3 border-b border-white/[0.08]">
+            <div className="p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-md shadow-md dark:shadow-xl space-y-4 transition-colors">
+              <h3 className="font-poppins font-bold text-base text-slate-900 dark:text-white pb-3 border-b border-slate-200 dark:border-white/[0.08]">
                 Informations Clés
               </h3>
 
               <div className="space-y-3.5 text-[13.8px]">
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <User className="w-4 h-4 text-blue-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <User className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                     Nom complet
                   </span>
-                  <span className="text-white font-medium">{profileData.name}</span>
+                  <span className="text-slate-900 dark:text-white font-medium">{profileData.name}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <Briefcase className="w-4 h-4 text-purple-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                     Spécialité
                   </span>
-                  <span className="text-white font-medium">{profileData.title}</span>
+                  <span className="text-slate-900 dark:text-white font-medium">{profileData.title}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <GraduationCap className="w-4 h-4 text-emerald-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                     Formation
                   </span>
-                  <span className="text-white font-medium">ISTA Sefrou (OFPPT)</span>
+                  <span className="text-slate-900 dark:text-white font-medium">ISTA Sefrou (OFPPT)</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-amber-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-amber-500 dark:text-amber-400" />
                     Ville
                   </span>
-                  <span className="text-white font-medium">{profileData.city}, {profileData.country}</span>
+                  <span className="text-slate-900 dark:text-white font-medium">{profileData.city}, {profileData.country}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-cyan-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                     Email
                   </span>
                   <a
                     href={`mailto:${profileData.email}`}
-                    className="text-blue-400 hover:text-blue-300 font-medium truncate max-w-[190px]"
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium truncate max-w-[190px]"
                   >
                     {profileData.email}
                   </a>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-[#84a5d0] flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-emerald-400" />
+                  <span className="text-slate-500 dark:text-[#84a5d0] flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                     Téléphone
                   </span>
                   <a
                     href={`tel:${profileData.phone.replace(/\s+/g, '')}`}
-                    className="text-white font-medium hover:text-emerald-300"
+                    className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 dark:hover:text-emerald-300"
                   >
                     {profileData.phone}
                   </a>
@@ -199,9 +210,9 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
             </div>
 
             {/* Languages Card */}
-            <div className="p-7 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md shadow-xl">
-              <h3 className="font-poppins font-bold text-base text-white mb-5 flex items-center gap-2">
-                <Languages className="w-4 h-4 text-blue-400" />
+            <div className="p-7 rounded-3xl bg-white dark:bg-white/[0.03] border border-slate-200/90 dark:border-white/[0.08] backdrop-blur-md shadow-md dark:shadow-xl transition-colors">
+              <h3 className="font-poppins font-bold text-base text-slate-900 dark:text-white mb-5 flex items-center gap-2">
+                <Languages className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 Langues Maîtrisées
               </h3>
 
@@ -209,10 +220,10 @@ export const About: React.FC<AboutProps> = ({ onOpenCv }) => {
                 {languages.map((lang, idx) => (
                   <div key={idx}>
                     <div className="flex items-center justify-between text-[13.5px] mb-1.5">
-                      <span className="text-white font-medium">{lang.name}</span>
-                      <span className="text-xs text-[#8caecc]">{lang.level}</span>
+                      <span className="text-slate-900 dark:text-white font-medium">{lang.name}</span>
+                      <span className="text-xs text-slate-500 dark:text-[#8caecc]">{lang.level}</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/[0.08] overflow-hidden">
+                    <div className="h-2 rounded-full bg-slate-200 dark:bg-white/[0.08] overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${lang.percentage}%` }}

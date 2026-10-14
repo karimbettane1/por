@@ -36,12 +36,12 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-4xl bg-[#0f172a] text-slate-100 rounded-3xl border border-white/15 shadow-2xl overflow-hidden my-auto"
+        className="relative w-full max-w-4xl bg-white dark:bg-[#0f172a] text-slate-900 dark:text-slate-100 rounded-3xl border border-slate-200 dark:border-white/15 shadow-2xl overflow-hidden my-auto transition-colors"
       >
         {/* Modal Top Control Bar */}
-        <div className="p-4 sm:px-6 bg-[#090f1d] border-b border-white/10 flex items-center justify-between no-print">
-          <div className="flex items-center gap-2 text-sm font-semibold text-blue-300">
-            <GraduationCap className="w-4 h-4 text-blue-400" />
+        <div className="p-4 sm:px-6 bg-slate-100 dark:bg-[#090f1d] border-b border-slate-200 dark:border-white/10 flex items-center justify-between no-print transition-colors">
+          <div className="flex items-center gap-2 text-sm font-semibold text-blue-700 dark:text-blue-300">
+            <GraduationCap className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span>Curriculum Vitae — Karim Bettane</span>
           </div>
 
@@ -57,7 +57,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+              className="p-1.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white transition-colors cursor-pointer"
               aria-label="Fermer"
             >
               <X className="w-4 h-4" />

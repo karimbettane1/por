@@ -29,29 +29,40 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-[#93c5fd] text-[12.5px] font-semibold mb-3">
-            <FolderGit2 className="w-3.5 h-3.5 text-blue-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-400/25 text-blue-700 dark:text-[#93c5fd] text-[12.5px] font-semibold mb-3">
+            <FolderGit2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>Portfolio & Réalisations</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white font-poppins tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-slate-900 dark:text-white font-poppins tracking-tight transition-colors">
             Mes Projets{' '}
+            <span
+              style={{
+                background: 'linear-gradient(92deg, #2563eb, #0284c7)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+              className="dark:hidden"
+            >
+              Réalisés
+            </span>
             <span
               style={{
                 background: 'linear-gradient(92deg, #60a5fa, #38bdf8)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
+              className="hidden dark:inline"
             >
               Réalisés
             </span>
           </h2>
-          <p className="text-[#9bb7de] text-[15.5px] mt-3">
+          <p className="text-slate-600 dark:text-[#9bb7de] text-[15.5px] mt-3 transition-colors">
             Une sélection de projets concrets démontrant mes compétences en développement full-stack, front-end réactif et algorithmique web.
           </p>
         </div>
@@ -66,13 +77,13 @@ export const Projects: React.FC = () => {
                 onClick={() => setActiveFilter(f.id as any)}
                 className={`px-4 py-2 rounded-xl text-[13.5px] font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                   isActive
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400/40'
-                    : 'bg-white/[0.03] text-[#93b4dd] hover:text-white border border-white/[0.08] hover:bg-white/[0.06]'
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30 border border-blue-500'
+                    : 'bg-white dark:bg-white/[0.03] text-slate-700 dark:text-[#93b4dd] hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/[0.08] hover:bg-slate-100 dark:hover:bg-white/[0.06] shadow-xs'
                 }`}
               >
                 <span>{f.label}</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  isActive ? 'bg-white/20 text-white' : 'bg-white/[0.06] text-[#8aa9cf]'
+                  isActive ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-white/[0.06] text-slate-700 dark:text-[#8aa9cf]'
                 }`}>
                   {f.count}
                 </span>
@@ -93,7 +104,7 @@ export const Projects: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="rounded-3xl border border-white/[0.09] bg-white/[0.025] overflow-hidden backdrop-blur-md shadow-xl flex flex-col hover:border-blue-500/40 transition-colors group"
+                className="rounded-3xl border border-slate-200/90 dark:border-white/[0.09] bg-white dark:bg-white/[0.025] overflow-hidden backdrop-blur-md shadow-md dark:shadow-xl flex flex-col hover:border-blue-500/40 transition-colors group"
               >
                 {/* Visual Banner Header */}
                 <div
@@ -145,11 +156,11 @@ export const Projects: React.FC = () => {
                   <div>
                     <h3
                       onClick={() => setSelectedProject(project)}
-                      className="font-poppins font-bold text-lg text-white group-hover:text-blue-300 transition-colors cursor-pointer mb-2"
+                      className="font-poppins font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors cursor-pointer mb-2"
                     >
                       {project.title}
                     </h3>
-                    <p className="text-[13.8px] leading-relaxed text-[#9fb8db] line-clamp-3 mb-4">
+                    <p className="text-[13.8px] leading-relaxed text-slate-600 dark:text-[#9fb8db] line-clamp-3 mb-4 transition-colors">
                       {project.description}
                     </p>
 
@@ -158,13 +169,13 @@ export const Projects: React.FC = () => {
                       {project.stack.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 rounded-lg text-[11px] font-semibold text-[#c8dbf5] bg-white/[0.04] border border-white/[0.08]"
+                          className="px-2.5 py-1 rounded-lg text-[11px] font-semibold text-slate-700 dark:text-[#c8dbf5] bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08]"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.stack.length > 4 && (
-                        <span className="px-2 py-1 rounded-lg text-[11px] font-semibold text-[#8ca8cd] bg-white/[0.02]">
+                        <span className="px-2 py-1 rounded-lg text-[11px] font-semibold text-slate-500 dark:text-[#8ca8cd] bg-slate-50 dark:bg-white/[0.02]">
                           +{project.stack.length - 4}
                         </span>
                       )}
@@ -172,7 +183,7 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-2.5 pt-3 border-t border-white/[0.08]">
+                  <div className="flex items-center gap-2.5 pt-3 border-t border-slate-200 dark:border-white/[0.08] transition-colors">
                     <button
                       onClick={() => setSelectedProject(project)}
                       className="flex-1 py-2.5 px-3 rounded-xl text-white text-xs font-semibold flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.02] transition-all cursor-pointer"
@@ -187,7 +198,7 @@ export const Projects: React.FC = () => {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.12] text-[#d6e5fa] text-xs font-semibold flex items-center gap-1.5 transition-all"
+                        className="py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-white/[0.04] hover:bg-slate-200 dark:hover:bg-white/[0.08] border border-slate-200 dark:border-white/[0.12] text-slate-700 dark:text-[#d6e5fa] text-xs font-semibold flex items-center gap-1.5 transition-all"
                         title="Code source sur GitHub"
                       >
                         <Github className="w-3.5 h-3.5" />
